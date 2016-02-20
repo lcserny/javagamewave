@@ -34,7 +34,9 @@ public class Game extends Canvas implements Runnable
         try {
             thread.join();
             running = false;
-        } catch (Exception ex) { ex.printStackTrace(); }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
     }
 
     @Override
@@ -74,12 +76,12 @@ public class Game extends Canvas implements Runnable
         stop();
     }
 
-    public void tick()
+    protected void tick()
     {
 
     }
 
-    public void render()
+    protected void render()
     {
         BufferStrategy bufferStrategy = this.getBufferStrategy();
         if (bufferStrategy == null) {
