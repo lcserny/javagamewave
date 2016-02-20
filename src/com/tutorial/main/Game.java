@@ -8,13 +8,13 @@ import java.awt.image.BufferStrategy;
  */
 public class Game extends Canvas implements Runnable
 {
-    public static final int WIDTH = 640, HEIGHT = WIDTH / 12 * 9;
     private Thread thread;
     private boolean running = false;
 
     public Game()
     {
-        new Window(WIDTH, HEIGHT, "Let's build a Game", this);
+        new Window("Let's build a Game", this);
+        start();
     }
 
     public static void main(String[] args)
@@ -89,7 +89,7 @@ public class Game extends Canvas implements Runnable
 
         Graphics graphics = bufferStrategy.getDrawGraphics();
         graphics.setColor(Color.black);
-        graphics.fillRect(0, 0, WIDTH, HEIGHT);
+        graphics.fillRect(0, 0, Window.WIDTH, Window.HEIGHT);
 
         graphics.dispose();
         bufferStrategy.show();
