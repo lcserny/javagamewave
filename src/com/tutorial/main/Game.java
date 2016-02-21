@@ -12,18 +12,16 @@ public class Game extends Canvas implements Runnable
     private Thread thread;
     private boolean running = false;
     private Handler handler;
-    private Random random;
 
     public Game()
     {
+        handler = new Handler();
+        addKeyListener(new KeyInput(handler));
         new Window("Let's build a Game", this);
         start();
-        handler = new Handler();
-        random = new Random();
 
-        for (int i = 0; i < 50; i++) {
-            handler.addObject(new Player(random.nextInt(Window.WIDTH), random.nextInt(Window.HEIGHT), ID.Player));
-        }
+        handler.addObject(new Player(Window.WIDTH / 2 - 32, Window.HEIGHT / 2 - 32, ID.Player));
+        handler.addObject(new Player(Window.WIDTH / 2 + 64, Window.HEIGHT / 2 - 32, ID.Player2));
     }
 
     public static void main(String[] args)

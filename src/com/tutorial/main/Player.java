@@ -8,14 +8,9 @@ import java.util.Random;
  */
 public class Player extends GameObject
 {
-    Random random = new Random();
-
     public Player(int x, int y, ID id)
     {
         super(x, y, id);
-
-        velX = random.nextInt(5);
-        velY = random.nextInt(5);
     }
 
     @Override
@@ -28,7 +23,12 @@ public class Player extends GameObject
     @Override
     public void render(Graphics graphics)
     {
-        graphics.setColor(Color.white);
+        if (getId() == ID.Player) {
+            graphics.setColor(Color.white);
+        } else if (getId() == ID.Player2) {
+            graphics.setColor(Color.blue);
+        }
+
         graphics.fillRect(x, y, 32, 32);
     }
 }

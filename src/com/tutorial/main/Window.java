@@ -13,14 +13,14 @@ public class Window extends Canvas
     public Window(String title, Game game)
     {
         JFrame frame = new JFrame(title);
+        frame.add(game);
+
         frame.setPreferredSize(new Dimension(WIDTH, HEIGHT));
         frame.setMaximumSize(new Dimension(WIDTH, HEIGHT));
         frame.setMinimumSize(new Dimension(WIDTH, HEIGHT));
-
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setResizable(false);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
-        frame.add(game);
     }
 }
