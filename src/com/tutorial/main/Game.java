@@ -9,8 +9,8 @@ import java.util.Random;
  */
 public class Game extends Canvas implements Runnable
 {
-    private Thread thread;
     private boolean running = false;
+    private Thread thread;
     private Handler handler;
     private Random random;
     private HUD hud;
@@ -25,8 +25,8 @@ public class Game extends Canvas implements Runnable
         new Window("Let's build a Game", this);
         start();
 
-        handler.addObject(new Player(Window.WIDTH / 2 - 32, Window.HEIGHT / 2 - 32, ID.Player));
-        handler.addObject(new BasicEnemy(random.nextInt(Window.WIDTH / 2), random.nextInt(Window.HEIGHT / 2), ID.BasicEnemy));
+        handler.addObject(new Player(Window.WIDTH / 2 - 32, Window.HEIGHT / 2 - 32, GameObjectID.Player));
+        handler.addObject(new BasicEnemy(random.nextInt(Window.WIDTH / 2), random.nextInt(Window.HEIGHT / 2), GameObjectID.BasicEnemy));
     }
 
     public static void main(String[] args)

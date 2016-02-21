@@ -1,9 +1,9 @@
 package com.tutorial.main;
 
 /**
- * Created by Leonardo on 21.02.2016.
+ * Created by sabyx on 21.02.2016.
  */
-public enum ID
+public enum GameObjectID
 {
     Player,
     BasicEnemy,

@@ -20,7 +20,7 @@ public class KeyInput extends KeyAdapter
     {
         int key = e.getKeyCode();
         for (GameObject object : handler.objects) {
-            if (object.getId() == ID.Player) {
+            if (object.getGameObjectId() == GameObjectID.Player) {
                 switch (key) {
                     case KeyEvent.VK_W:
                         object.setSpeedY(-5);
@@ -48,7 +48,7 @@ public class KeyInput extends KeyAdapter
     {
         int key = e.getKeyCode();
         for (GameObject object : handler.objects) {
-            if (object.getId() == ID.Player) {
+            if (object.getGameObjectId() == GameObjectID.Player) {
                 switch (key) {
                     case KeyEvent.VK_W:
                         object.setSpeedY(0);

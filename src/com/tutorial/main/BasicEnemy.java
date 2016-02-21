@@ -7,9 +7,9 @@ import java.awt.*;
  */
 public class BasicEnemy extends GameObject
 {
-    public BasicEnemy(int x, int y, ID id)
+    public BasicEnemy(int x, int y, GameObjectID gameObjectId)
     {
-        super(x, y, id);
+        super(x, y, gameObjectId);
 
         speedX = 5;
         speedY = 5;

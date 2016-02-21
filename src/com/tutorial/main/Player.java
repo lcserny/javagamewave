@@ -7,9 +7,9 @@ import java.awt.*;
  */
 public class Player extends GameObject
 {
-    public Player(int x, int y, ID id)
+    public Player(int x, int y, GameObjectID gameObjectId)
     {
-        super(x, y, id);
+        super(x, y, gameObjectId);
     }
 
     @Override

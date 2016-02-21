@@ -8,14 +8,14 @@ import java.awt.*;
 public abstract class GameObject
 {
     protected int posX, posY;
-    protected ID id;
+    protected GameObjectID gameObjectId;
     protected int speedX, speedY;
 
-    public GameObject(int posX, int posY, ID id)
+    public GameObject(int posX, int posY, GameObjectID gameObjectId)
     {
         this.posX = posX;
         this.posY = posY;
-        this.id = id;
+        this.gameObjectId = gameObjectId;
     }
 
     public abstract void tick();
@@ -42,14 +42,14 @@ public abstract class GameObject
         this.posY = posY;
     }
 
-    public ID getId()
+    public GameObjectID getGameObjectId()
     {
-        return id;
+        return gameObjectId;
     }
 
-    public void setId(ID id)
+    public void setGameObjectId(GameObjectID gameObjectId)
     {
-        this.id = id;
+        this.gameObjectId = gameObjectId;
     }
 
     public int getSpeedX()
