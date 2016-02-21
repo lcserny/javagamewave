@@ -12,16 +12,21 @@ public class Game extends Canvas implements Runnable
     private Thread thread;
     private boolean running = false;
     private Handler handler;
+    private Random random;
+    private HUD hud;
 
     public Game()
     {
         handler = new Handler();
+        random = new Random();
+        hud = new HUD();
+
         addKeyListener(new KeyInput(handler));
         new Window("Let's build a Game", this);
         start();
 
         handler.addObject(new Player(Window.WIDTH / 2 - 32, Window.HEIGHT / 2 - 32, ID.Player));
-        handler.addObject(new Player(Window.WIDTH / 2 + 64, Window.HEIGHT / 2 - 32, ID.Player2));
+        handler.addObject(new BasicEnemy(random.nextInt(Window.WIDTH / 2), random.nextInt(Window.HEIGHT / 2), ID.BasicEnemy));
     }
 
     public static void main(String[] args)
@@ -50,6 +55,8 @@ public class Game extends Canvas implements Runnable
     /* Basic Game loop */
     public void run()
     {
+        this.requestFocus();
+
         long lastTime = System.nanoTime();
         double amountOfClicks = 60.0;
         double ns = 1000000000 / amountOfClicks;
@@ -83,9 +90,21 @@ public class Game extends Canvas implements Runnable
         stop();
     }
 
+    public static int clamp(int val, int min, int max)
+    {
+        if (val >= max) {
+            return val = max;
+        } else if (val <= min) {
+            return val = min;
+        } else {
+            return val;
+        }
+    }
+
     protected void tick()
     {
         handler.tick();
+        hud.tick();
     }
 
     protected void render()
@@ -101,6 +120,7 @@ public class Game extends Canvas implements Runnable
         graphics.fillRect(0, 0, Window.WIDTH, Window.HEIGHT);
 
         handler.render(graphics);
+        hud.render(graphics);
 
         graphics.dispose();
         bufferStrategy.show();

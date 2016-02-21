@@ -7,14 +7,14 @@ import java.awt.*;
  */
 public abstract class GameObject
 {
-    protected int x, y;
+    protected int posX, posY;
     protected ID id;
-    protected int velX, velY;
+    protected int speedX, speedY;
 
-    public GameObject(int x, int y, ID id)
+    public GameObject(int posX, int posY, ID id)
     {
-        this.x = x;
-        this.y = y;
+        this.posX = posX;
+        this.posY = posY;
         this.id = id;
     }
 
@@ -22,24 +22,24 @@ public abstract class GameObject
 
     public abstract void render(Graphics graphics);
 
-    public int getX()
+    public int getPosX()
     {
-        return x;
+        return posX;
     }
 
-    public void setX(int x)
+    public void setPosX(int posX)
     {
-        this.x = x;
+        this.posX = posX;
     }
 
-    public int getY()
+    public int getPosY()
     {
-        return y;
+        return posY;
     }
 
-    public void setY(int y)
+    public void setPosY(int posY)
     {
-        this.y = y;
+        this.posY = posY;
     }
 
     public ID getId()
@@ -52,23 +52,23 @@ public abstract class GameObject
         this.id = id;
     }
 
-    public int getVelX()
+    public int getSpeedX()
     {
-        return velX;
+        return speedX;
     }
 
-    public void setVelX(int velX)
+    public void setSpeedX(int speedX)
     {
-        this.velX = velX;
+        this.speedX = speedX;
     }
 
-    public int getVelY()
+    public int getSpeedY()
     {
-        return velY;
+        return speedY;
     }
 
-    public void setVelY(int velY)
+    public void setSpeedY(int speedY)
     {
-        this.velY = velY;
+        this.speedY = speedY;
     }
 }
