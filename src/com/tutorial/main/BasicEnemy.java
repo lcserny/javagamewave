@@ -21,11 +21,11 @@ public class BasicEnemy extends GameObject
         posX += speedX;
         posY += speedY;
 
-        if (posY <= 0 || posY >= Window.HEIGHT - 32) {
+        if (posY <= 0 || posY >= Window.HEIGHT - 42) {
             speedY *= -1;
         }
 
-        if (posX <= 0 || posX >= Window.WIDTH - 32) {
+        if (posX <= 0 || posX >= Window.WIDTH - 26) {
             speedX *= -1;
         }
     }
