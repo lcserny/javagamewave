@@ -18,7 +18,7 @@ public abstract class GameObject
         this.gameObjectId = gameObjectId;
     }
 
-    public abstract void tick();
+    public abstract void update();
 
     public abstract void render(Graphics graphics);
 

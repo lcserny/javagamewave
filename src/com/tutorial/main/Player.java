@@ -13,7 +13,7 @@ public class Player extends GameObject
     }
 
     @Override
-    public void tick()
+    public void update()
     {
         posY += speedY;
         posX += speedX;

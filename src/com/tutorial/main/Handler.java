@@ -10,10 +10,10 @@ public class Handler
 {
     LinkedList<GameObject> objects = new LinkedList<GameObject>();
 
-    public void tick()
+    public void update()
     {
         for (GameObject object : objects) {
-            object.tick();
+            object.update();
         }
     }
 

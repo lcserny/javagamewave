@@ -70,7 +70,7 @@ public class Game extends Canvas implements Runnable
             lastTime = now;
 
             while (delta >= 1) {
-                tick();
+                update();
                 delta--;
             }
 
@@ -101,10 +101,10 @@ public class Game extends Canvas implements Runnable
         }
     }
 
-    protected void tick()
+    protected void update()
     {
-        handler.tick();
-        hud.tick();
+        handler.update();
+        hud.update();
     }
 
     protected void render()

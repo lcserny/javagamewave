@@ -16,7 +16,7 @@ public class BasicEnemy extends GameObject
     }
 
     @Override
-    public void tick()
+    public void update()
     {
         posX += speedX;
         posY += speedY;
